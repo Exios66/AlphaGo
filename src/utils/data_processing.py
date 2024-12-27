@@ -71,7 +71,7 @@ class GoDataProcessor:
         Returns:
             List of (board_state, next_move, outcome) tuples
         """
-        game = sgf.parse(sgf_content)
+        game = sgf.Sgf_game.from_string(sgf_content.encode('utf-8'))
         board_size = 19  # Standard board size
         
         # Initialize empty board
