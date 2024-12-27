@@ -8,7 +8,9 @@ def main():
     parser.add_argument('--board-size', type=int, default=19,
                       help='Size of the Go board (default: 19)')
     parser.add_argument('--ai-mode', action='store_true',
-                      help='Enable AI opponent (not implemented yet)')
+                      help='Enable AI opponent (plays as White)')
+    parser.add_argument('--num-simulations', type=int, default=800,
+                      help='Number of MCTS simulations per move (default: 800)')
     
     args = parser.parse_args()
     
@@ -18,9 +20,10 @@ def main():
     
     print(f"Starting AlphaGo Clone with {args.board_size}x{args.board_size} board")
     if args.ai_mode:
-        print("AI opponent mode is not implemented yet. Starting in two-player mode.")
+        print("AI opponent enabled (playing as White)")
+        print(f"Using {args.num_simulations} MCTS simulations per move")
     
-    game = GameUI(board_size=args.board_size)
+    game = GameUI(board_size=args.board_size, ai_opponent=args.ai_mode)
     game.run()
 
 if __name__ == "__main__":
