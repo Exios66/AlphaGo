@@ -3,7 +3,7 @@ import gzip
 import urllib.request
 import numpy as np
 from typing import List, Tuple, Generator
-import sgf
+from sgfmill import sgf
 from tqdm import tqdm
 
 class GoDataProcessor:

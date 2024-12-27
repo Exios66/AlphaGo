@@ -4,74 +4,26 @@ An AlphaGo-inspired application that allows users to play the game of Go against
 
 ## Features
 
-- Interactive Go Board: Play on a 19x19 grid with real-time updates
+- Interactive Go Board: Play on customizable 9x9, 13x13, or 19x19 grids with real-time updates
 - AI Opponent: Powered by Policy and Value Networks combined with Monte Carlo Tree Search
-- Move Validation: Ensures all moves comply with Go rules
-- Game Visualization: Display captured stones and game status
+- Move Validation: Ensures all moves comply with Go rules including ko and suicide rules
+- Game Visualization: Display captured stones, territory estimation, and game status
+- Training Pipeline: Scripts to train neural networks on game datasets
+- Pre-trained Models: Ready-to-use policy and value networks trained on KGS game records
+- Cross-platform Support: Runs on Windows, macOS, and Linux
 
 ## Installation
 
 ### Prerequisites
 
 - Python 3.8+
-- PyTorch
-- Pygame
-- Other dependencies listed in `requirements.txt`
+- PyTorch >= 1.9.0
+- Pygame >= 2.0.1
+- NumPy >= 1.21.0
+- Matplotlib >= 3.4.3
+- tqdm >= 4.62.3
+- pytest >= 6.2.5
 
 ### Setup
 
 1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/AlphaGo-Clone.git
-cd AlphaGo-Clone
-```
-
-2. Create and activate a virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-Run the application:
-
-```bash
-python src/main.py
-```
-
-## Project Structure
-
-```
-AlphaGo-Clone/
-├── data/
-│   ├── datasets/          # Go game datasets
-│   └── models/            # Pre-trained models
-├── src/
-│   ├── game/             # Game logic and rules
-│   ├── ai/               # AI components (Policy Network, Value Network, MCTS)
-│   ├── ui/               # User interface components
-│   └── utils/            # Utility functions
-├── notebooks/            # Jupyter notebooks for experimentation
-├── tests/                # Unit and integration tests
-├── requirements.txt      # Python dependencies
-└── README.md            # Project documentation
-```
-
-## License
-
-This project is licensed under the MIT License.
-
-## Acknowledgements
-
-- Inspired by DeepMind's AlphaGo
-- Utilizes PyTorch for deep learning
-- Game data sourced from KGS Go Dataset
